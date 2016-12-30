@@ -22,6 +22,7 @@
     <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
     <script>
         $(function(){
+            'use strict';
             $("button[name=b1]").click(function () {
                 var value = $("input[name=Count]").val();
                 if (value=="请输入书名号"){
