@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.ui.theme" value="simple" />
+
+    <!-- 第1步：先定义一个包 -->
+    <package name="mypck" extends="struts-default">
+        <action name="BookAction_*" class="bookAction" method="{1}">
+            <result name="index">/WEB-INF/jsp/index.jsp</result>
+            <result name="add">/WEB-INF/jsp/add.jsp</result>
+            <result name="rev">/WEB-INF/jsp/rev.jsp</result>
+            <result name="error">/WEB-INF/jsp/error.jsp</result>
+            <result name="revamp" type="redirectAction">BookAction_getAllList.action</result>
+            <result name="delete" type="redirectAction">BookAction_getAllList.action</result>
+            <result name="addSuccess" type="redirectAction">BookAction_getAllList.action</result>
+        </action>
+
+    </package>
+</struts>
